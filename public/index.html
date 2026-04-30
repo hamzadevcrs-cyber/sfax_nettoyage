@@ -10,14 +10,40 @@
     body{font-family:'Tajawal',system-ui,sans-serif;direction:rtl;background:#0f1117;color:#e2e8f0;min-height:100vh}
     @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap');
     :root{--bg:#0f1117;--bg2:#161b26;--bg3:#1e2536;--acc:#10b981;--acc2:#3b82f6;--acc3:#f59e0b;--border:#2d3748;--text:#e2e8f0;--muted:#94a3b8;--red:#ef4444;--teal:#0d9488}
+
+    /* LOGIN PAGE */
+    .login-page{display:flex;align-items:center;justify-content:center;min-height:100vh;padding:20px}
+    .login-box{background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:40px;width:100%;max-width:420px}
+    .login-logo{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#dc2626,#b91c1c);display:flex;align-items:center;justify-content:center;font-size:28px;margin:0 auto 20px}
+    .login-title{text-align:center;font-size:20px;font-weight:800;color:#fff;margin-bottom:6px}
+    .login-sub{text-align:center;font-size:13px;color:var(--muted);margin-bottom:28px}
+    .login-field{margin-bottom:16px}
+    .login-field label{display:block;font-size:12px;font-weight:700;color:var(--muted);margin-bottom:6px}
+    .login-field input,.login-field select{width:100%;background:var(--bg2);border:1px solid var(--border);color:#e2e8f0;padding:11px 14px;border-radius:10px;font-family:inherit;font-size:14px;direction:rtl;transition:.2s}
+    .login-field input:focus,.login-field select:focus{outline:none;border-color:#3b82f6;box-shadow:0 0 0 3px rgba(59,130,246,.15)}
+    .login-btn{width:100%;background:linear-gradient(135deg,#10b981,#059669);border:none;color:#fff;padding:12px;border-radius:10px;cursor:pointer;font-family:inherit;font-size:15px;font-weight:700;transition:.2s;margin-top:8px}
+    .login-btn:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(16,185,129,.35)}
+    .login-btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
+    .login-error{background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.3);color:#fca5a5;padding:10px 14px;border-radius:8px;font-size:12px;margin-bottom:16px;display:none}
+    .login-switch{text-align:center;margin-top:20px;font-size:12px;color:var(--muted)}
+    .login-switch a{color:#60a5fa;cursor:pointer;font-weight:700;text-decoration:none}
+    .login-switch a:hover{text-decoration:underline}
+
+    /* DASHBOARD */
     .topbar{background:linear-gradient(135deg,#0b2545 0%,#0f172a 100%);border-bottom:1px solid #1e3a5f;padding:14px 20px 0;position:sticky;top:0;z-index:100}
-    .topbar-inner{display:flex;align-items:center;gap:14px;margin-bottom:12px}
+    .topbar-inner{display:flex;align-items:center;gap:14px;margin-bottom:12px;flex-wrap:wrap}
     .logo-circle{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#dc2626,#b91c1c);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
     .topbar-title h1{font-size:16px;font-weight:800;color:#fff;line-height:1.2}
     .topbar-title p{font-size:11px;color:#93c5fd;margin-top:2px}
     .live-badge{display:flex;align-items:center;gap:6px;margin-right:auto;background:rgba(16,185,129,.15);border:1px solid rgba(16,185,129,.3);border-radius:20px;padding:4px 12px;font-size:12px;color:#34d399}
     .live-dot{width:8px;height:8px;border-radius:50%;background:#10b981;animation:pulse 2s infinite}
     @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+    .user-badge{display:flex;align-items:center;gap:8px;background:rgba(59,130,246,.12);border:1px solid rgba(59,130,246,.25);border-radius:20px;padding:5px 14px;font-size:12px;color:#93c5fd;font-weight:700}
+    .user-badge .mun-name{color:#60a5fa}
+    .logout-btn{background:rgba(239,68,68,.12);border:1px solid rgba(239,68,68,.25);color:#fca5a5;padding:5px 12px;border-radius:8px;cursor:pointer;font-family:inherit;font-size:11px;font-weight:700;transition:.2s}
+    .logout-btn:hover{background:rgba(239,68,68,.25);color:#ef4444}
+    .pwd-btn{background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.25);color:#fbbf24;padding:5px 12px;border-radius:8px;cursor:pointer;font-family:inherit;font-size:11px;font-weight:700;transition:.2s}
+    .pwd-btn:hover{background:rgba(245,158,11,.25);color:#f59e0b}
     .nav-tabs{display:flex;gap:2px;overflow-x:auto;padding-bottom:0}
     .nav-btn{background:none;border:none;color:#94a3b8;padding:8px 14px;cursor:pointer;font-size:12px;font-family:inherit;border-radius:8px 8px 0 0;white-space:nowrap;transition:.2s;font-weight:600;display:flex;align-items:center;gap:6px}
     .nav-btn:hover{background:rgba(255,255,255,.06);color:#e2e8f0}
@@ -95,14 +121,89 @@
     .btn-primary:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(16,185,129,.35)}
     .btn-cancel{background:transparent;border:1px solid #2d3748;color:#94a3b8;padding:10px 20px;border-radius:10px;cursor:pointer;font-family:inherit;font-size:13px;font-weight:700;transition:.2s}
     .btn-cancel:hover{border-color:#ef4444;color:#ef4444}
-    .add-btn{background:linear-gradient(135deg,#8b5cf6,#6d28d9);border:none;color:#fff;padding:7px 14px;border-radius:8px;cursor:pointer;font-family:inherit;font-size:12px;font-weight:700;display:flex;align-items:center;gap:5px;transition:.2s}
-    .add-btn:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(139,92,246,.3)}
+    .add-btn{background:linear-gradient(135deg,#10b981,#059669);border:none;color:#fff;padding:7px 14px;border-radius:8px;cursor:pointer;font-family:inherit;font-size:12px;font-weight:700;display:flex;align-items:center;gap:5px;transition:.2s}
+    .add-btn:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(16,185,129,.3)}
     .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:#10b981;color:#fff;padding:12px 22px;border-radius:12px;font-weight:700;font-size:13px;z-index:2000;transition:.4s;opacity:0;pointer-events:none}
     .toast.show{transform:translateX(-50%) translateY(0);opacity:1}
     .loading{text-align:center;color:var(--muted);padding:20px}
+
+    /* ADMIN PAGE */
+    .admin-grid{display:grid;grid-template-columns:1fr;gap:16px}
+    .admin-card{background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:18px}
+    .admin-user-row{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.04)}
+    .admin-user-row:last-child{border-bottom:none}
+    .admin-user-info{flex:1}
+    .admin-user-name{font-size:13px;font-weight:700;color:#e2e8f0}
+    .admin-user-email{font-size:11px;color:var(--muted)}
+    .admin-user-mun{font-size:11px;color:#60a5fa;font-weight:600}
+    .admin-user-role{font-size:10px;padding:2px 8px;border-radius:6px;font-weight:700}
+    .admin-user-role.admin{background:rgba(245,158,11,.15);color:#fbbf24}
+    .admin-user-role.municipalite{background:rgba(59,130,246,.15);color:#60a5fa}
+    .delete-user-btn{background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.25);color:#fca5a5;padding:4px 10px;border-radius:6px;cursor:pointer;font-family:inherit;font-size:10px;font-weight:700;transition:.2s}
+    .delete-user-btn:hover{background:rgba(239,68,68,.25);color:#ef4444}
+    .admin-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin-bottom:16px}
+    .admin-stat{background:var(--bg2);border-radius:8px;padding:12px;text-align:center}
+    .admin-stat-val{font-size:20px;font-weight:800;color:#fff}
+    .admin-stat-lbl{font-size:10px;color:var(--muted);margin-top:4px}
+
+    /* CREDENTIALS TABLE */
+    .cred-tbl{width:100%;border-collapse:collapse;font-size:11px;margin-top:12px}
+    .cred-tbl th{background:rgba(255,255,255,.04);color:var(--muted);font-weight:700;padding:8px 10px;text-align:right;border-bottom:1px solid var(--border);font-size:10px}
+    .cred-tbl td{padding:7px 10px;border-bottom:1px solid rgba(255,255,255,.04);color:#e2e8f0;font-size:11px}
+    .cred-tbl tr:hover td{background:rgba(255,255,255,.03)}
+    .cred-email{color:#60a5fa;font-family:monospace;font-size:10px;direction:ltr;text-align:left}
+
+    /* ADMIN MUN FILTER */
+    .admin-mun-filter{display:flex;align-items:center;gap:10px;margin-bottom:16px;flex-wrap:wrap}
+    .admin-mun-filter label{font-size:12px;font-weight:700;color:var(--muted)}
+    .admin-mun-filter select{background:var(--bg2);border:1px solid var(--border);color:#e2e8f0;padding:6px 10px;border-radius:8px;font-family:inherit;font-size:12px;direction:rtl}
+
+    /* PRINT */
+    @media print{
+      .topbar,.add-btn,.export-btn,.filter-bar,.nav-tabs,.logout-btn,.pwd-btn,.user-badge,.modal-overlay{display:none!important}
+      body{background:#fff;color:#000}
+      .main{padding:10px}
+      .card,.kpi-card,.mun-card{border:1px solid #ccc;background:#fff}
+      .kpi-val,.mun-name,.sec-title{color:#000}
+      .kpi-label,.mun-stat-lbl,.bar-name{color:#555}
+      .mun-stat-val{color:#059669}
+      .mun-stat-val.blue{color:#2563eb}
+    }
+
+    @media(max-width:768px){
+      .charts-row{grid-template-columns:1fr}
+      .form-grid{grid-template-columns:1fr}
+      .topbar-inner{flex-wrap:wrap}
+      .user-badge{display:none}
+    }
   </style>
 </head>
 <body>
+
+<!-- LOGIN PAGE -->
+<div id="loginPage" class="login-page">
+  <div class="login-box">
+    <div class="login-logo">🏛️</div>
+    <div class="login-title">لوحة متابعة أنشطة النظافة</div>
+    <div class="login-sub">ولاية صفاقس — 23 بلدية</div>
+    <div class="login-error" id="loginError"></div>
+
+    <div id="loginForm">
+      <div class="login-field">
+        <label>البريد الإلكتروني</label>
+        <input type="email" id="loginEmail" placeholder="admin@sfax.gov.tn" autocomplete="email">
+      </div>
+      <div class="login-field">
+        <label>كلمة المرور</label>
+        <input type="password" id="loginPassword" placeholder="••••••" autocomplete="current-password">
+      </div>
+      <button class="login-btn" id="loginBtn" onclick="handleLogin()">تسجيل الدخول</button>
+    </div>
+  </div>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboardPage" style="display:none">
 
 <div class="topbar">
   <div class="topbar-inner">
@@ -115,15 +216,30 @@
       <div class="live-dot"></div>
       <span id="liveTime">--:--</span>
     </div>
+    <div class="user-badge" id="userBadge">
+      <span>👤</span>
+      <span id="userName">--</span>
+      <span class="mun-name" id="userMun">--</span>
+    </div>
+    <button class="pwd-btn" onclick="openPwdModal()">🔑 تغيير كلمة المرور</button>
+    <button class="logout-btn" onclick="handleLogout()">خروج</button>
   </div>
-  <div style="display:flex;align-items:center;gap:8px;padding-bottom:4px">
-    <div class="nav-tabs">
+  <div style="display:flex;align-items:center;gap:8px;padding-bottom:4px;flex-wrap:wrap">
+    <div class="nav-tabs" id="navTabs">
       <button class="nav-btn active" onclick="showPage('dashboard',this)">📊 لوحة المتابعة</button>
       <button class="nav-btn" onclick="showPage('municipalities',this)">🏙️ البلديات</button>
       <button class="nav-btn" onclick="showPage('quantities',this)">📈 الكميات اليومية</button>
     </div>
+    <!-- Admin municipality filter -->
+    <div class="admin-mun-filter" id="adminMunFilter" style="display:none">
+      <label>🏙️ عرض بلدية:</label>
+      <select id="adminMunSelect" onchange="onAdminMunFilter()">
+        <option value="all">جميع البلديات</option>
+      </select>
+    </div>
     <button class="add-btn" onclick="openModal()">➕ إضافة تدخل</button>
     <button class="export-btn" onclick="exportJSON()">⬇ تصدير JSON</button>
+    <button class="neu-btn" onclick="window.print()">🖨️ طباعة</button>
   </div>
 </div>
 
@@ -194,9 +310,34 @@
   </div>
 </div>
 
+<!-- ADMIN PAGE -->
+<div id="page-admin" class="page">
+  <div class="admin-stats" id="adminStats"></div>
+  <div class="admin-grid">
+    <div class="admin-card">
+      <div class="sec-title"><span>👥</span> إدارة المستخدمين</div>
+      <div style="margin-bottom:14px">
+        <button class="add-btn" onclick="openRegisterModal()">➕ إضافة مستخدم</button>
+      </div>
+      <div id="adminUserList"><div class="loading">جاري تحميل...</div></div>
+    </div>
+    <div class="admin-card">
+      <div class="sec-title"><span>📋</span> بيانات الدخول — 23 بلدية</div>
+      <p style="font-size:11px;color:var(--muted);margin-bottom:8px">كلمة المرور الافتراضية لجميع البلديات: <code style="background:var(--bg2);padding:2px 6px;border-radius:4px;color:#fbbf24">muni1234</code></p>
+      <div class="tbl-wrap">
+        <table class="cred-tbl">
+          <thead><tr><th>#</th><th>البلدية</th><th>البريد الإلكتروني</th></tr></thead>
+          <tbody id="credBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 </div>
 
-<!-- MODAL -->
+</div>
+</div>
+
+<!-- ADD INTERVENTION MODAL -->
 <div class="modal-overlay" id="addModal">
   <div class="modal-box">
     <button class="modal-close" onclick="closeModal()">✕</button>
@@ -248,38 +389,261 @@
   </div>
 </div>
 
+<!-- ADD USER MODAL -->
+<div class="modal-overlay" id="addUserModal">
+  <div class="modal-box" style="max-width:500px">
+    <button class="modal-close" onclick="closeUserModal()">✕</button>
+    <div class="modal-title">➕ إضافة مستخدم جديد</div>
+    <div class="form-grid">
+      <div class="form-group full">
+        <label class="form-label">📧 البريد الإلكتروني</label>
+        <input type="email" id="au_email" class="form-input" placeholder="user@municipalite.gov.tn">
+      </div>
+      <div class="form-group">
+        <label class="form-label">🔑 كلمة المرور</label>
+        <input type="password" id="au_password" class="form-input" placeholder="6 أحرف على الأقل">
+      </div>
+      <div class="form-group">
+        <label class="form-label">👤 الاسم الكامل</label>
+        <input type="text" id="au_name" class="form-input" placeholder="محمد أحمد">
+      </div>
+      <div class="form-group">
+        <label class="form-label">🏙️ البلدية</label>
+        <select id="au_mun" class="form-select">
+          <option value="">-- اختر البلدية --</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">🔐 الصلاحية</label>
+        <select id="au_role" class="form-select">
+          <option value="municipalite">بلدية</option>
+          <option value="admin">مدير</option>
+        </select>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-primary" onclick="createUser()">✅ إنشاء المستخدم</button>
+      <button class="btn-cancel" onclick="closeUserModal()">إلغاء</button>
+    </div>
+  </div>
+</div>
+
+<!-- CHANGE PASSWORD MODAL -->
+<div class="modal-overlay" id="pwdModal">
+  <div class="modal-box" style="max-width:400px">
+    <button class="modal-close" onclick="closePwdModal()">✕</button>
+    <div class="modal-title">🔑 تغيير كلمة المرور</div>
+    <div class="form-grid" style="grid-template-columns:1fr">
+      <div class="form-group">
+        <label class="form-label">كلمة المرور الجديدة (6 أحرف على الأقل)</label>
+        <input type="password" id="pwd_new" class="form-input" placeholder="••••••">
+      </div>
+      <div class="form-group">
+        <label class="form-label">تأكيد كلمة المرور</label>
+        <input type="password" id="pwd_confirm" class="form-input" placeholder="••••••">
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-primary" onclick="changePassword()">✅ تغيير</button>
+      <button class="btn-cancel" onclick="closePwdModal()">إلغاء</button>
+    </div>
+  </div>
+</div>
+
 <div class="toast" id="toast"></div>
 
 <script>
 const API_URL = '/api';
 const MUNICIPALITIES = ['صفاقس','الصخيرة','المحرس','النور','ساقية الزيت','قرقنة','الحاجب','الحنشة','العوابد الخزانات','العامرة','الشيحية','العين','الغريبة','النصر','بئر علي الشمالية','بئر علي بن خليفة','جبنيانة','حزق اللوزة','عقارب','منزل شاكر','قرمدة','ساقية الدائر','طينة'];
+const MUN_EMAILS = {
+  'صفاقس':'sfax@sfax.gov.tn','الصخيرة':'sokhra@sfax.gov.tn','المحرس':'mahres@sfax.gov.tn',
+  'النور':'nour@sfax.gov.tn','ساقية الزيت':'sakiet-ezzit@sfax.gov.tn','قرقنة':'kerkena@sfax.gov.tn',
+  'الحاجب':'hajeb@sfax.gov.tn','الحنشة':'hencha@sfax.gov.tn','العوابد الخزانات':'awabed@sfax.gov.tn',
+  'العامرة':'amra@sfax.gov.tn','الشيحية':'chihia@sfax.gov.tn','العين':'ain@sfax.gov.tn',
+  'الغريبة':'ghariba@sfax.gov.tn','النصر':'nasr@sfax.gov.tn','بئر علي الشمالية':'bir-ali-chimalia@sfax.gov.tn',
+  'بئر علي بن خليفة':'bir-ali-khalifa@sfax.gov.tn','جبنيانة':'jbeniana@sfax.gov.tn',
+  'حزق اللوزة':'hazq-louza@sfax.gov.tn','عقارب':'aqarib@sfax.gov.tn','منزل شاكر':'manzel-chaker@sfax.gov.tn',
+  'قرمدة':'qarmada@sfax.gov.tn','ساقية الدائر':'sakiet-eddair@sfax.gov.tn','طينة':'tina@sfax.gov.tn'
+};
 const COLORS=['#3b82f6','#10b981','#f59e0b','#ef4444','#8b5cf6','#0d9488','#f97316','#06b6d4','#ec4899','#84cc16','#6366f1','#14b8a6','#a855f7','#22d3ee','#fb923c'];
 
 let allInterventions = [];
 let currentDateFilter = 'all';
 let availableDates = [];
+let currentUser = null;
+let authToken = null;
+let adminMunFilter = 'all';
 
-// Populate municipality select
-function initMunicipalitySelects() {
-  const select = document.getElementById('f_mun');
-  MUNICIPALITIES.forEach(mun => {
+// ============ AUTH ============
+
+function getAuthHeaders() {
+  const h = { 'Content-Type': 'application/json' };
+  if (authToken) h['Authorization'] = `Bearer ${authToken}`;
+  return h;
+}
+
+async function handleLogin() {
+  const email = document.getElementById('loginEmail').value.trim();
+  const password = document.getElementById('loginPassword').value;
+  const btn = document.getElementById('loginBtn');
+  const errEl = document.getElementById('loginError');
+
+  if (!email || !password) {
+    errEl.textContent = 'يرجى إدخال البريد الإلكتروني وكلمة المرور';
+    errEl.style.display = '';
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = 'جاري التحقق...';
+
+  try {
+    const res = await fetch(`${API_URL}/auth/login`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password })
+    });
+
+    const data = await res.json();
+
+    if (!res.ok) {
+      errEl.textContent = data.error || 'خطأ في تسجيل الدخول';
+      errEl.style.display = '';
+      return;
+    }
+
+    authToken = data.access_token;
+    currentUser = data.user;
+    localStorage.setItem('authToken', authToken);
+    localStorage.setItem('currentUser', JSON.stringify(currentUser));
+    enterDashboard();
+  } catch (err) {
+    errEl.textContent = 'خطأ في الاتصال بالخادم';
+    errEl.style.display = '';
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'تسجيل الدخول';
+  }
+}
+
+function handleLogout() {
+  authToken = null;
+  currentUser = null;
+  localStorage.removeItem('authToken');
+  localStorage.removeItem('currentUser');
+  document.getElementById('dashboardPage').style.display = 'none';
+  document.getElementById('loginPage').style.display = '';
+  document.getElementById('loginEmail').value = '';
+  document.getElementById('loginPassword').value = '';
+  document.getElementById('loginError').style.display = 'none';
+}
+
+async function tryRestoreSession() {
+  const savedToken = localStorage.getItem('authToken');
+  const savedUser = localStorage.getItem('currentUser');
+
+  if (savedToken && savedUser) {
+    authToken = savedToken;
+    currentUser = JSON.parse(savedUser);
+    try {
+      const res = await fetch(`${API_URL}/auth/me`, { headers: getAuthHeaders() });
+      if (res.ok) {
+        currentUser = await res.json();
+        localStorage.setItem('currentUser', JSON.stringify(currentUser));
+        enterDashboard();
+        return;
+      }
+    } catch (e) {}
+  }
+  handleLogout();
+}
+
+function enterDashboard() {
+  document.getElementById('loginPage').style.display = 'none';
+  document.getElementById('dashboardPage').style.display = '';
+
+  document.getElementById('userName').textContent = currentUser.full_name || currentUser.email;
+  document.getElementById('userMun').textContent = currentUser.role === 'admin' ? '(مدير — جميع البلديات)' : `(${currentUser.municipalite})`;
+
+  // Show admin tab + mun filter
+  const navTabs = document.getElementById('navTabs');
+  const existingAdmin = navTabs.querySelector('[data-admin]');
+  if (currentUser.role === 'admin') {
+    if (!existingAdmin) {
+      const btn = document.createElement('button');
+      btn.className = 'nav-btn';
+      btn.setAttribute('data-admin', 'true');
+      btn.setAttribute('onclick', "showPage('admin',this)");
+      btn.textContent = '👥 إدارة المستخدمين';
+      navTabs.appendChild(btn);
+    }
+    document.getElementById('adminMunFilter').style.display = '';
+    populateAdminMunFilter();
+  } else {
+    if (existingAdmin) existingAdmin.remove();
+    document.getElementById('adminMunFilter').style.display = 'none';
+  }
+
+  initMunicipalitySelects();
+  setDefaultDate();
+  loadData();
+  updateTime();
+  setInterval(updateTime, 60000);
+}
+
+function populateAdminMunFilter() {
+  const sel = document.getElementById('adminMunSelect');
+  sel.innerHTML = '<option value="all">جميع البلديات</option>';
+  MUNICIPALITIES.forEach(m => {
     const opt = document.createElement('option');
-    opt.value = mun;
-    opt.textContent = mun;
-    select.appendChild(opt);
+    opt.value = m;
+    opt.textContent = m;
+    sel.appendChild(opt);
   });
 }
 
-// Set default date to today
-function setDefaultDate() {
-  const today = new Date().toISOString().split('T')[0];
-  document.getElementById('f_date').value = today;
+function onAdminMunFilter() {
+  adminMunFilter = document.getElementById('adminMunSelect').value;
+  loadData();
 }
 
-// Fetch interventions from API
+// ============ MUNICIPALITY SELECTS ============
+
+function initMunicipalitySelects() {
+  const selects = ['f_mun', 'au_mun'];
+  const muns = currentUser.role === 'admin' ? MUNICIPALITIES : [currentUser.municipalite];
+
+  selects.forEach(id => {
+    const select = document.getElementById(id);
+    if (!select) return;
+    while (select.options.length > 1) select.remove(1);
+    muns.forEach(mun => {
+      const opt = document.createElement('option');
+      opt.value = mun;
+      opt.textContent = mun;
+      select.appendChild(opt);
+    });
+    if (id === 'f_mun' && currentUser.role !== 'admin') {
+      select.value = currentUser.municipalite;
+      select.disabled = true;
+    }
+  });
+}
+
+function setDefaultDate() {
+  document.getElementById('f_date').value = new Date().toISOString().split('T')[0];
+}
+
+// ============ DATA ============
+
 async function loadData() {
   try {
-    const response = await fetch(`${API_URL}/interventions`);
+    let url = `${API_URL}/interventions`;
+    if (currentUser.role === 'admin' && adminMunFilter !== 'all') {
+      url += `?municipalite=${encodeURIComponent(adminMunFilter)}`;
+    }
+    const response = await fetch(url, { headers: getAuthHeaders() });
+    if (response.status === 401) { handleLogout(); return; }
     allInterventions = await response.json();
     availableDates = [...new Set(allInterventions.map(r => r.date))].sort();
 
@@ -287,6 +651,8 @@ async function loadData() {
     renderMunGrid();
     renderQtyTable('all');
     populateDateFilters();
+
+    if (currentUser.role === 'admin') loadAdminData();
   } catch (err) {
     console.error('Error loading data:', err);
     showToast('خطأ في تحميل البيانات');
@@ -304,7 +670,7 @@ function populateDateFilters() {
     const day = date.replace(/^\d{4}-\d{2}-/, '').replace(/^0/, '');
     const opt = document.createElement('option');
     opt.value = date;
-    opt.textContent = `${day}`;
+    opt.textContent = day;
     dateSelect.appendChild(opt);
 
     const btn = document.createElement('button');
@@ -317,19 +683,13 @@ function populateDateFilters() {
 
 function getMunTotals(dateFilter) {
   const map = {};
-  const filtered = dateFilter === 'all'
-    ? allInterventions
-    : allInterventions.filter(r => r.date === dateFilter);
-
+  const filtered = dateFilter === 'all' ? allInterventions : allInterventions.filter(r => r.date === dateFilter);
   filtered.forEach(r => {
-    if (!map[r.municipalite]) {
-      map[r.municipalite] = { municipalite: r.municipalite, quantite_ton: 0, metre_lineaire: 0, days: new Set() };
-    }
+    if (!map[r.municipalite]) map[r.municipalite] = { municipalite: r.municipalite, quantite_ton: 0, metre_lineaire: 0, days: new Set() };
     map[r.municipalite].quantite_ton += parseFloat(r.quantite_ton || 0);
     map[r.municipalite].metre_lineaire += parseInt(r.metre_lineaire || 0);
     map[r.municipalite].days.add(r.date);
   });
-
   return Object.values(map).map(v => ({ ...v, days: v.days.size }));
 }
 
@@ -338,6 +698,7 @@ function showPage(id, btn) {
   document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
   document.getElementById('page-' + id).classList.add('active');
   btn.classList.add('active');
+  if (id === 'admin' && currentUser.role === 'admin') loadAdminData();
 }
 
 function filterDate(d, btn) {
@@ -354,10 +715,7 @@ function resetFilters() {
 }
 
 function renderQtyTable(dateFilter) {
-  const rows = dateFilter === 'all'
-    ? allInterventions
-    : allInterventions.filter(r => r.date === dateFilter);
-
+  const rows = dateFilter === 'all' ? allInterventions : allInterventions.filter(r => r.date === dateFilter);
   const total = rows.reduce((s, r) => s + parseFloat(r.quantite_ton || 0), 0);
   document.getElementById('qtyTotal').textContent = '📦 إجمالي: ' + total.toFixed(1) + ' طن';
 
@@ -369,11 +727,10 @@ function renderQtyTable(dateFilter) {
       <td style="color:var(--muted)">${r.date.substring(8).replace(/^0/, '')}</td>
       <td style="text-align:center"><span class="badge badge-ton">${r.quantite_ton} طن</span></td>
       <td style="text-align:center">${r.metre_lineaire > 0 ? `<span class="badge badge-mk">${r.metre_lineaire} م خ</span>` : '—'}</td>
-      <td style="font-size:11px;color:var(--muted);max-width:200px">${r.type_intervention.split('/')[0].trim()}…</td>
-      <td style="font-size:11px;color:var(--muted);max-width:180px">${r.lieux.split('/')[0].trim()}…</td>
+      <td style="font-size:11px;color:var(--muted);max-width:200px">${r.type_intervention.split('/')[0].trim()}</td>
+      <td style="font-size:11px;color:var(--muted);max-width:180px">${r.lieux.split('/')[0].trim()}</td>
     </tr>`;
   });
-
   document.getElementById('qtyBody').innerHTML = html || '<tr><td colspan="7" style="text-align:center;color:var(--muted);padding:20px">لا توجد بيانات</td></tr>';
 }
 
@@ -403,7 +760,6 @@ function renderMunGrid() {
       <div style="font-size:10px;color:var(--muted);margin-top:4px;text-align:left">${pct}%</div>
     </div>`;
   });
-
   document.getElementById('munGrid').innerHTML = html || '<div class="loading" style="grid-column:1/-1">لا توجد بيانات</div>';
 }
 
@@ -469,14 +825,158 @@ function initDashboard() {
   });
 }
 
+// ============ ADMIN ============
+
+async function loadAdminData() {
+  if (!currentUser || currentUser.role !== 'admin') return;
+
+  try {
+    const res = await fetch(`${API_URL}/auth/users`, { headers: getAuthHeaders() });
+    const users = await res.json();
+
+    const adminCount = users.filter(u => u.role === 'admin').length;
+    const munCount = users.filter(u => u.role === 'municipalite').length;
+    const activeMuns = new Set(users.filter(u => u.role === 'municipalite').map(u => u.municipalite)).size;
+
+    document.getElementById('adminStats').innerHTML = `
+      <div class="admin-stat"><div class="admin-stat-val">${users.length}</div><div class="admin-stat-lbl">إجمالي المستخدمين</div></div>
+      <div class="admin-stat"><div class="admin-stat-val">${adminCount}</div><div class="admin-stat-lbl">مديرين</div></div>
+      <div class="admin-stat"><div class="admin-stat-val">${munCount}</div><div class="admin-stat-lbl">حسابات بلديات</div></div>
+      <div class="admin-stat"><div class="admin-stat-val">${activeMuns}/23</div><div class="admin-stat-lbl">بلديات مفعلة</div></div>
+    `;
+
+    let html = '';
+    users.forEach(u => {
+      html += `<div class="admin-user-row">
+        <div class="admin-user-info">
+          <div class="admin-user-name">${u.full_name || u.email}</div>
+          <div class="admin-user-email">${u.email}</div>
+          <div class="admin-user-mun">${u.municipalite}</div>
+        </div>
+        <span class="admin-user-role ${u.role}">${u.role === 'admin' ? 'مدير' : 'بلدية'}</span>
+        ${u.id !== currentUser.id ? `<button class="delete-user-btn" onclick="deleteUser('${u.id}','${u.email}')">حذف</button>` : ''}
+      </div>`;
+    });
+    document.getElementById('adminUserList').innerHTML = html || '<div class="loading">لا يوجد مستخدمون</div>';
+
+    // Credentials table
+    let credHtml = '';
+    MUNICIPALITIES.forEach((m, i) => {
+      const email = MUN_EMAILS[m] || '—';
+      credHtml += `<tr><td>${i+1}</td><td>${m}</td><td class="cred-email">${email}</td></tr>`;
+    });
+    document.getElementById('credBody').innerHTML = credHtml;
+
+  } catch (err) {
+    console.error('Error loading admin data:', err);
+  }
+}
+
+function openRegisterModal() {
+  document.getElementById('addUserModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeUserModal() {
+  document.getElementById('addUserModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('addUserModal').addEventListener('click', function(e) {
+  if (e.target === this) closeUserModal();
+});
+
+async function createUser() {
+  const email = document.getElementById('au_email').value.trim();
+  const password = document.getElementById('au_password').value;
+  const name = document.getElementById('au_name').value.trim();
+  const mun = document.getElementById('au_mun').value;
+  const role = document.getElementById('au_role').value;
+
+  if (!email || !password || !mun) { showToast('يرجى ملء جميع الحقول المطلوبة'); return; }
+
+  try {
+    const res = await fetch(`${API_URL}/auth/register`, {
+      method: 'POST',
+      headers: getAuthHeaders(),
+      body: JSON.stringify({ email, password, full_name: name, municipalite: mun, role })
+    });
+    const data = await res.json();
+    if (!res.ok) { showToast(data.error || 'خطأ في إنشاء المستخدم'); return; }
+
+    showToast('تم إنشاء المستخدم بنجاح');
+    document.getElementById('au_email').value = '';
+    document.getElementById('au_password').value = '';
+    document.getElementById('au_name').value = '';
+    closeUserModal();
+    loadAdminData();
+  } catch (err) {
+    showToast('خطأ في الاتصال بالخادم');
+  }
+}
+
+async function deleteUser(userId, email) {
+  if (!confirm(`هل أنت متأكد من حذف المستخدم ${email}؟`)) return;
+  try {
+    const res = await fetch(`${API_URL}/auth/users/${userId}`, { method: 'DELETE', headers: getAuthHeaders() });
+    if (res.ok) { showToast('تم حذف المستخدم'); loadAdminData(); }
+    else { const data = await res.json(); showToast(data.error || 'خطأ في الحذف'); }
+  } catch (err) { showToast('خطأ في الاتصال بالخادم'); }
+}
+
+// ============ PASSWORD CHANGE ============
+
+function openPwdModal() {
+  document.getElementById('pwdModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closePwdModal() {
+  document.getElementById('pwdModal').classList.remove('open');
+  document.body.style.overflow = '';
+  document.getElementById('pwd_new').value = '';
+  document.getElementById('pwd_confirm').value = '';
+}
+
+document.getElementById('pwdModal').addEventListener('click', function(e) {
+  if (e.target === this) closePwdModal();
+});
+
+async function changePassword() {
+  const newPwd = document.getElementById('pwd_new').value;
+  const confirmPwd = document.getElementById('pwd_confirm').value;
+
+  if (!newPwd || newPwd.length < 6) { showToast('كلمة المرور يجب أن تكون 6 أحرف على الأقل'); return; }
+  if (newPwd !== confirmPwd) { showToast('كلمتا المرور غير متطابقتين'); return; }
+
+  try {
+    const res = await fetch(`${API_URL}/auth/change-password`, {
+      method: 'POST',
+      headers: getAuthHeaders(),
+      body: JSON.stringify({ new_password: newPwd })
+    });
+    const data = await res.json();
+    if (!res.ok) { showToast(data.error || 'خطأ في تغيير كلمة المرور'); return; }
+
+    showToast('تم تغيير كلمة المرور بنجاح');
+    closePwdModal();
+  } catch (err) {
+    showToast('خطأ في الاتصال بالخادم');
+  }
+}
+
+// ============ EXPORT ============
+
 async function exportJSON() {
   try {
-    const stats = await fetch(`${API_URL}/stats`).then(r => r.json());
-    const munStats = await fetch(`${API_URL}/stats/by-municipality`).then(r => r.json());
+    const stats = await fetch(`${API_URL}/stats`, { headers: getAuthHeaders() }).then(r => r.json());
+    const munStats = await fetch(`${API_URL}/stats/by-municipality`, { headers: getAuthHeaders() }).then(r => r.json());
 
     const out = {
       rapport: 'تقرير متابعة أنشطة النظافة — ولاية صفاقس',
       export_date: new Date().toISOString(),
+      utilisateur: currentUser.email,
+      municipalite: currentUser.role === 'admin' ? 'جميع البلديات' : currentUser.municipalite,
       resume: stats,
       totaux_par_municipalite: munStats.sort((a, b) => b.quantite_ton - a.quantite_ton),
       interventions_detail: allInterventions
@@ -493,6 +993,8 @@ async function exportJSON() {
     showToast('خطأ في التصدير');
   }
 }
+
+// ============ UTILS ============
 
 function updateTime() {
   const now = new Date();
@@ -539,11 +1041,15 @@ async function submitEntry() {
   try {
     const response = await fetch(`${API_URL}/interventions`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: getAuthHeaders(),
       body: JSON.stringify({ date, municipalite, quantite_ton, metre_lineaire, type_intervention, lieux, ressources_humaines, equipements })
     });
 
-    if (!response.ok) throw new Error('Failed to save');
+    if (response.status === 401) { handleLogout(); return; }
+    if (!response.ok) {
+      const err = await response.json();
+      throw new Error(err.error || 'Failed to save');
+    }
 
     document.getElementById('f_ton').value = '';
     document.getElementById('f_mk').value = '';
@@ -554,19 +1060,23 @@ async function submitEntry() {
 
     await loadData();
     closeModal();
-    showToast(`✅ تمت إضافة تدخل ${municipalite} — ${quantite_ton} طن بنجاح`);
+    showToast(`تمت إضافة تدخل ${municipalite} — ${quantite_ton} طن بنجاح`);
   } catch (err) {
     console.error('Submit error:', err);
-    showToast('خطأ في حفظ البيانات');
+    showToast('خطأ في حفظ البيانات: ' + err.message);
   }
 }
 
-// Initialize
-initMunicipalitySelects();
-setDefaultDate();
-loadData();
-updateTime();
-setInterval(updateTime, 60000);
+// ============ INIT ============
+
+document.getElementById('loginPassword').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') handleLogin();
+});
+document.getElementById('loginEmail').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') handleLogin();
+});
+
+tryRestoreSession();
 </script>
 </body>
 </html>
