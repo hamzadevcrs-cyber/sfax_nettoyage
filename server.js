@@ -29,6 +29,11 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static('public'));
 
+// GET /config - Provide Supabase URL and anon key to frontend
+app.get('/api/config', (req, res) => {
+  res.json({ url: supabaseUrl, anonKey: supabaseAnonKey });
+});
+
 // Helper: get user profile from token
 async function getUserProfile(authHeader) {
   if (!authHeader || !authHeader.startsWith('Bearer ')) return null;
