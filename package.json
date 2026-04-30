@@ -1,0 +1,17 @@
+{
+  "name": "nettoyage-dashboard",
+  "version": "1.0.0",
+  "description": "Dashboard de suivi des activités de nettoyage - ولاية صفاقس",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "@supabase/supabase-js": "^2.38.4",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1"
+  }
+}
